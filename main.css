@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  .music-player {
+    width: 350px;
+    height: 550px;
+    background: white;
+    padding: 30px;
+  }
+  .music-name,
+  .artist-name {
+      text-align: center;
+      text-transform: capitalize;
+    }
+    .music-name {
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    .artist-name {
+  
+    font-size: 20px;
+  }
+  
+  .disk{
+    position: relative;
+    display: block;
+    margin: 40px auto;
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    
+  }
+  
+  .song-slider{
+    width: 100%;
+    position: relative;
+  }
+  .seek-bar{
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    background: rgb(219, 219, 219);
+  }
+  .seek-bar::-webkit-slider-thumb{
+    appearance: none;
+    width: 1px;
+    height: 20px;
+    background: gray;
+    box-shadow: -400px 0 0 400px gray;
+  }
+  .current-time,
+  .song-duration{
+    font-size: 14px;
+  }
+  .song-duration{
+    position: absolute;
+    right: 0;
+  }
+  
+  .controls{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+  }
+  .play-btn{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .play-btn span{
+    width: 10px;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    border-radius: 2px;
+    height: 30px;
+    transition: .5s;
+    background: black;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .play-btn span:nth-child(2){
+    left: 55%;
+    transform-origin: center;
+  }
+  .play-btn.pause span:nth-child(2){
+    transform: translateY(-50%) scaleY(0);
+  }
+  .play-btn.pause span:nth-child(1){
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+    left: 53%;
+    width: 35%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+  }
+  .btn{
+    width: 40px;
+    background: white;
+    height: 40px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+  .play-btn:active{
+    background-color: gray;
+  }
+  .btn:active{
+    background-color: gray;
+  }
